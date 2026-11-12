@@ -1,0 +1,1473 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surprise For Komal ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #100819;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.section {
+    width: 92%;
+    max-width: 850px;
+    margin: 35px auto;
+}
+
+.hero {
+    padding: 65px 15px 45px;
+}
+
+.eyebrow {
+    color: #ff9de2;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 18px;
+}
+
+h1 {
+    color: #ff9de2;
+    font-size: clamp(32px, 8vw, 55px);
+    text-shadow: 0 0 15px #ff36c7;
+    margin-bottom: 18px;
+}
+
+p {
+    color: #e8d8ed;
+    line-height: 1.8;
+}
+
+h2 {
+    color: #ffb4e9;
+    margin-bottom: 18px;
+    text-shadow: 0 0 12px #ff36c7;
+}
+
+button {
+    color: white;
+    background: linear-gradient(135deg, #ff36c7, #8c35ff);
+    border: 1px solid #ffb4e9;
+    border-radius: 30px;
+    padding: 14px 25px;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 15px 5px;
+    cursor: pointer;
+    box-shadow: 0 0 12px #ff36c7, 0 0 25px #8c35ff;
+    transition: 0.3s;
+}
+
+button:active {
+    transform: scale(0.94);
+}
+
+button:disabled {
+    opacity: 0.7;
+}
+
+.gift-btn {
+    margin-top: 28px;
+}
+
+/* VIDEO CARD */
+
+.song-card {
+    display: none;
+    padding: 25px 15px;
+    border: 1px solid #ff6bdb;
+    border-radius: 25px;
+    background: #21102e;
+    box-shadow: 0 0 20px #d52bbd;
+}
+
+.song-card.show {
+    display: block;
+}
+
+input[type="file"] {
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 12px;
+    color: white;
+    background: #321c42;
+    border-radius: 12px;
+}
+
+video {
+    width: 100%;
+    max-width: 600px;
+    max-height: 350px;
+    border-radius: 15px;
+    border: 2px solid #ff6bdb;
+    box-shadow: 0 0 18px #ff36c7;
+    margin-top: 15px;
+    background: black;
+}
+
+#status {
+    color: #ffb4e9;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+/* FRIENDSHIP WRAPPER */
+
+.friendship-wrapper {
+    display: none;
+}
+
+.friendship-wrapper.show {
+    display: block;
+}
+
+/* 2D SECTION */
+
+.friendship-section {
+    display: none;
+    padding: 25px 10px;
+}
+
+.friendship-section.show {
+    display: block;
+}
+
+.section-heading {
+    margin-bottom: 25px;
+}
+
+.friendship-card {
+    padding: 25px 18px;
+    margin: 22px auto;
+    max-width: 650px;
+    border: 1px solid #ff68d9;
+    border-radius: 22px;
+    background: linear-gradient(145deg, #281238, #170c25);
+    box-shadow: 0 0 12px #ff36c7, inset 0 0 12px #702b83;
+    transition: 0.3s;
+}
+
+.friendship-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px #ff36c7;
+}
+
+.friendship-card h3 {
+    color: #ffb4e9;
+    margin-bottom: 13px;
+}
+
+.secret-message {
+    display: none;
+    max-width: 650px;
+    margin: 20px auto;
+    padding: 25px;
+    border: 1px solid gold;
+    border-radius: 20px;
+    background: #24172c;
+    box-shadow: 0 0 20px #e7a52b;
+    line-height: 1.8;
+}
+
+.secret-message.show {
+    display: block;
+}
+
+/* 3D SECTION */
+
+.memory3d-section {
+    display: none;
+    padding: 35px 10px;
+    margin-top: 30px;
+}
+
+.memory3d-section.show {
+    display: block;
+}
+
+.flip-card {
+    width: 260px;
+    height: 320px;
+    max-width: 85vw;
+    margin: 30px auto;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+.flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 2px solid #ff9de2;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(145deg, #50145e, #190d2b);
+    box-shadow: 0 0 20px #ff36c7;
+}
+
+.flip-front h2, .flip-back h2 {
+    color: #ffd0f0;
+}
+
+.flip-front p, .flip-back p {
+    line-height: 1.8;
+}
+
+.flip-back {
+    transform: rotateY(180deg);
+}
+
+/* EMOJI RAIN */
+
+#emojiRain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.emoji {
+    position: absolute;
+    top: -40px;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+footer {
+    padding: 30px 10px;
+    color: #d6a9d4;
+    font-size: 13px;
+}
+  .promise-section {
+    margin: 30px 0;
+    padding: 25px 15px;
+    background: linear-gradient(135deg, #301044, #6b176d);
+    border: 2px solid #ff70d9;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #ff4fc8;
+    text-align: center;
+}
+
+.promise-section h2 {
+    color: #ff9de8;
+}
+
+.promise-btn {
+    background: linear-gradient(45deg, #ff299f, #9b35ff);
+    color: white;
+    border: none;
+    padding: 13px 22px;
+    border-radius: 30px;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.promise-message {
+    display: none;
+    color: white;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+.promise-message.show {
+    display: block;
+                              }
+  /* 3D LETTER ENVELOPE */
+
+.letter-section {
+    text-align: center;
+    margin: 35px 0;
+    padding: 25px 10px;
+}
+
+.letter-section h2 {
+    color: #ff8cde;
+}
+
+.envelope {
+    position: relative;
+    width: 260px;
+    height: 170px;
+    margin: 35px auto;
+    background: #ff69b4;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 25px #ff4fc8;
+    perspective: 800px;
+}
+
+.envelope::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #ff85c5;
+    clip-path: polygon(0 0, 50% 60%, 100% 0);
+    z-index: 3;
+    transform-origin: top;
+    transition: transform 0.8s;
+}
+
+.envelope.open::before {
+    transform: rotateX(180deg);
+    z-index: 0;
+}
+
+.envelope::after {
+    content: "❤️";
+    position: absolute;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 35px;
+    z-index: 4;
+}
+.letter-paper {
+    display: none;
+    background: #fff8fc;
+    color: #542044;
+    padding: 25px 20px;
+    border: 2px solid #ff9cda;
+    border-radius: 18px;
+    line-height: 2;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    margin: 25px auto;
+    width: 90%;
+    max-width: 380px;
+    box-sizing: border-box;
+    box-shadow: 0 0 25px rgba(255, 80, 190, 0.35);
+}
+
+.letter-paper h3 {
+    color: #d12b91;
+    text-align: center;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.letter-paper p {
+    margin: 15px 0;
+    overflow-wrap: break-word;
+}
+
+.letter-paper.show {
+    display: block;
+    animation: letterOpen 1s ease;
+}
+
+@keyframes letterOpen {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+/* GOLDEN MEMORIES SURPRISE */
+
+.golden-section {
+    margin: 35px 0;
+    padding: 30px 15px;
+    text-align: center;
+    background: linear-gradient(135deg, #24102f, #54204d);
+    border: 2px solid #ffd76a;
+    border-radius: 22px;
+    box-shadow: 0 0 25px rgba(255, 190, 50, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.golden-section h2 {
+    color: #ffdc83;
+    text-shadow: 0 0 12px #ffbd38;
+}
+
+.golden-btn {
+    padding: 14px 25px;
+    border: 1px solid #ffe49a;
+    border-radius: 30px;
+    color: #351b26;
+    background: linear-gradient(45deg, #ffd45c, #fff0ad);
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 0 18px #ffc94d;
+    cursor: pointer;
+}
+
+.golden-message {
+    display: none;
+    color: #fff1c9;
+    font-size: 17px;
+    line-height: 1.9;
+    margin-top: 22px;
+}
+
+.golden-message.show {
+    display: block;
+    animation: goldenReveal 1.2s ease;
+}
+
+@keyframes goldenReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.golden-particle {
+    position: absolute;
+    top: -15px;
+    color: #ffd45c;
+    font-size: 18px;
+    pointer-events: none;
+    animation: goldenFall 3s linear forwards;
+}
+
+@keyframes goldenFall {
+    to {
+        transform: translateY(550px) rotate(360deg);
+        opacity: 0;
+    }
+  }
+
+  /* REASONS WHY YOU ARE SPECIAL */
+
+.reasons-section {
+    margin: 35px 0;
+    padding: 25px 15px;
+    background: linear-gradient(135deg, #220d32, #55164e);
+    border: 2px solid #ff83d5;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 0 22px #e83eaf;
+}
+
+.reasons-section h2 {
+    color: #ff9cde;
+}
+
+.reason-card {
+    background: linear-gradient(135deg, #ff6bbd, #9e43dc);
+    color: white;
+    padding: 17px;
+    margin: 15px auto;
+    max-width: 320px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 0 15px #ff55c8;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.reason-card:active {
+    transform: scale(0.95);
+}
+
+.reason-text {
+    display: none;
+    color: #ffe1f5;
+    font-weight: normal;
+    margin-top: 12px;
+    line-height: 1.7;
+}
+
+.reason-text.show {
+    display: block;
+    animation: goldenReveal 0.7s ease;
+  }
+/* UNIVERSAL LIVE NEON GLOW */
+
+@keyframes universalGlow {
+    0% {
+        box-shadow: 0 0 8px #ff00cc, 0 0 18px #ff00cc;
+        border-color: #ff00cc;
+    }
+
+    50% {
+        box-shadow: 0 0 8px #8a2bff, 0 0 22px #8a2bff;
+        border-color: #8a2bff;
+    }
+
+    100% {
+        box-shadow: 0 0 8px #00d9ff, 0 0 18px #00d9ff;
+        border-color: #00d9ff;
+    }
+}
+
+/* ALL BUTTONS AND INPUT BUTTONS */
+
+button,
+input[type="button"],
+input[type="submit"] {
+    animation: universalGlow 3s infinite alternate !important;
+    border: 2px solid #ff00cc !important;
+}
+
+/* ALL WEBSITE CARDS */
+
+.card,
+.flip-card,
+.reason-card,
+.promise-section,
+.golden-section,
+.letter-paper,
+.envelope,
+[class*="card"]
+ {
+    animation: universalGlow 3s infinite alternate !important;
+}
+
+/* SMOOTH EFFECT */
+
+button,
+[class*="card"]
+{
+    transition: 0.3s ease;
+      }
+/* NEON RIPPLE EFFECT */
+
+button {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+button .ripple {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.8);
+    transform: scale(0);
+    animation: rippleGlow 0.7s ease-out;
+    pointer-events: none;
+}
+
+@keyframes rippleGlow {
+    to {
+        transform: scale(18);
+        opacity: 0;
+    }
+  }
+  /* FLOATING HEARTS AND BUBBLES */
+
+.floating-effects-layer {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -60px;
+    animation: heartFloat linear forwards;
+    filter: drop-shadow(0 0 10px currentColor);
+    opacity: 0;
+}
+
+@keyframes heartFloat {
+    0% {
+        transform: translateY(0) scale(0.7) rotate(-15deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translateY(-115vh) scale(1.2) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+/* GLASS BUBBLES */
+
+.floating-bubble {
+    position: absolute;
+    bottom: -60px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.65);
+
+    background:
+        radial-gradient(circle at 30% 25%,
+        rgba(255,255,255,0.8),
+        rgba(255,255,255,0.12) 25%,
+        rgba(160,100,255,0.12) 65%,
+        rgba(255,255,255,0.08));
+
+    box-shadow:
+        inset 0 0 12px rgba(255,255,255,0.4),
+        0 0 12px rgba(180,150,255,0.3);
+
+    animation: bubbleFloat linear forwards;
+    opacity: 0;
+}
+
+@keyframes bubbleFloat {
+    0% {
+        transform: translateY(0) translateX(0) scale(0.7);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-115vh) translateX(35px) scale(1.2);
+        opacity: 0;
+    }
+                        }
+  
+</style>
+</head>
+
+<body>
+
+<!-- FIRST SECTION -->
+
+<div class="section hero">
+    <div class="eyebrow">A LITTLE SURPRISE</div>
+
+    <h1>❣️ For You My Special Person❣️</h1>
+
+  
+
+    <button class="gift-btn" id="openSong">
+        🎁 Open Your Surprise 🎁
+    </button>
+</div>
+
+<!-- VIDEO SECTION -->
+
+<div class="section">
+    <div class="song-card" id="songCard">
+
+        <h2>🩷For you Bestie-Komal🩷</h2>
+<p>  video dekhne ke baad aage ka open karna </p>
+      
+
+        <input type="file" id="myVideo" accept="video/*">
+
+        <video id="videoPlayer" controls playsinline></video>
+
+        <hr style="border:1px solid #ff6bdb; margin:25px 0;">
+
+<h2>🎶 Special Music For you ❤️</h2>
+
+<input type="file" id="musicInput" accept="audio/*">
+
+
+
+<audio id="bgMusic"></audio>
+
+    </div>
+</div>
+
+<!-- FRIENDSHIP WRAPPER -->
+
+<div class="section friendship-wrapper" id="friendshipWrapper">
+
+    <button id="openFriendship">
+        💗 Open My Heart 💗
+    </button>
+
+    <!-- 2D FRIENDSHIP SECTION -->
+
+    <section class="friendship-section" id="friendshipMessage">
+
+        <h2 class="section-heading">
+            A Little About Our Friendship 💖
+        </h2>
+
+        <div class="friendship-card">
+            <h3>🌸 A Special Friend</h3>
+            <p>
+                bestie, tum ek bahut hi special dost ho.
+                Tumhari dosti mere liye bahut maayne rakhti hai.
+                Hamesha aise hi muskurati rehna. ❤️
+            </p>
+        </div>
+
+        <div class="friendship-card">
+            <h3>✨ Beautiful Memories</h3>
+            <p>
+                Dosti sirf baat karne ka naam nahi hota.
+                Dosti woh ehsaas hai jo door rehkar bhi
+                dil ke kareeb rakhta hai. 💕
+            </p>
+        </div>
+
+        <div class="friendship-card">
+            <h3>🦋 Stay Happy Always</h3>
+            <p>
+                Kabhi apni smile mat khona.
+                Tumhari khushi bahut important hai.
+                Hamesha khush rehna aur apna khayal rakhna. 🌷
+            </p>
+        </div>
+
+        <button id="secretBtn">
+            ✨ One More Secret ✨
+        </button>
+
+        <div class="secret-message" id="secretMessage">
+            <h2>💌 Ek Chhoti Si Baat</h2>
+            <p>
+                Pata hai bestie , har kisi se dosti nahi hoti.
+                Kuch log apne aap khaas ban jaate hain.
+                Tum bhi unhi mein se ek ho.
+                <br><br>
+                Thank you meri life mein itni achhi dost
+                banne ke liye. 🥰❤️
+            </p>
+        </div>
+<!-- FRIENDSHIP PROMISE SECTION -->
+
+<div class="promise-section">
+
+    <h2>🤝 A Promise For Komal ❤️</h2>
+
+    <p>Komal, ek special promise sunogi? 🥺</p>
+
+    <button class="promise-btn" onclick="showPromise()">
+        💗 Open My Promise
+    </button>
+
+    <div class="promise-message" id="promiseMessage">
+        Komal ❤️<br><br>
+
+        Promise karta hoon ki tumhari smile
+        kabhi kam nahi hone dunga. 🥰<br><br>
+
+        Chahe kitni bhi doori ho,
+        hamari dosti hamesha special rahegi. 💖<br><br>
+
+        Tum ek bahut achhi dost ho! 🫂
+    </div>
+
+</div>
+      <!-- LETTER FOR KOMAL -->
+
+<div class="letter-section">
+
+    <h2>💌 A Special Letter For Komal</h2>
+
+    <p>Komal, tumhare liye kuch likha hai 🥺❤️</p>
+
+    <div class="envelope" id="myEnvelope"
+         onclick="openLetter()">
+    </div>
+
+    <p>👆 Envelope par click karo ❤️</p>
+
+    <div class="letter-paper" id="myLetter">
+
+        <h3>Dear bestiea ❤️🥺</h3>
+
+        <p>
+        Jab se tum meri life mein aayi ho na,
+        tab se main pehle se kahin zyada khush rehne laga hoon. ❤️
+        </p>
+
+        <p>
+        Sach kahun toh itni khushi maine pehle kabhi mehsoos nahi ki thi.
+        Tumhari chhoti-chhoti baatein aur tumhara hansna
+        mere din ko special bana deta hai. 🥰
+        </p>
+
+        <p>
+        Kabhi-kabhi sochta hoon ki meri life mein
+        tum jaisi dost kaise aa gayi.
+        Shayad meri kismat mein kuch achha likha tha. 🫂
+        </p>
+
+        <p>
+        Bas ek chhoti si request hai tumse...
+        mujhe kabhi chhodkar mat jaana.
+        Main nahi chahta ki hamari pyari si dosti kabhi khatam ho. ❤️
+        </p>
+
+        <p>
+        Main hamesha tumhari smile ki wajah banna chahta hoon
+        aur tumhari pareshani mein tumhara saath dena chahta hoon. 💗
+        </p>
+
+        <h3>Thank You For Coming Into My Life! 🥺</h3>
+
+        <p><b>Tumhara ek pagal sa dost ❤️🫂</b></p>
+
+    </div>
+
+</div>
+      <!-- GOLDEN MEMORIES -->
+
+<div class="golden-section">
+
+    <h2>✨ Golden Memories ✨</h2>
+
+    <p style="color:#ffe8ad;">
+        Komal, hamari dosti ke naam ek chhota sa surprise! ❤️
+    </p>
+
+    <button class="golden-btn" onclick="openGoldenMemory()">
+        ✨ Open Golden Surprise
+    </button>
+
+    <div class="golden-message" id="goldenMessage">
+
+        <h3>💛 Meri Pyari Komal 💛</h3>
+
+        <p>
+            Kuch log zindagi mein aate hain
+            aur use pehle se zyada khoobsurat bana dete hain.
+            Tum mere liye unhi mein se ek ho. 🥺
+        </p>
+
+        <p>
+            Tumhare saath bitaya har pal mere liye
+            ek golden memory hai.
+            Bas ye dosti hamesha aise hi bani rahe. ❤️
+        </p>
+
+        <h3>You're Special, Komal! 🫂</h3>
+
+    </div>
+
+</div>
+      <!-- 5 REASONS WHY KOMAL IS SPECIAL -->
+
+<div class="reasons-section">
+
+    <h2>🌸 5 Reasons Why You're Special 🌸</h2>
+
+    <p style="color:#ffd8f1;">
+        Komal, har card mein tumhare liye ek baat hai 🥺❤️
+    </p>
+
+    <div class="reason-card" onclick="toggleReason(1)">
+        💗 Reason 1 — Your Smile
+        <div class="reason-text" id="reason1">
+            Tumhari smile meri udaasi ko bhi khushi mein badal deti hai. 🥰
+        </div>
+    </div>
+
+    <div class="reason-card" onclick="toggleReason(2)">
+        🫂 Reason 2 — Your Friendship
+        <div class="reason-text" id="reason2">
+            Tum jaisi dost milna mere liye kisi gift se kam nahi hai. ❤️
+        </div>
+    </div>
+
+    <div class="reason-card" onclick="toggleReason(3)">
+        🌷 Reason 3 — Your Nature
+        <div class="reason-text" id="reason3">
+            Tumhara pyara sa nature tumhe sabse alag banata hai. 💕
+        </div>
+    </div>
+
+    <div class="reason-card" onclick="toggleReason(4)">
+        ✨ Reason 4 — Your Presence
+        <div class="reason-text" id="reason4">
+            Tumse baat karke mera har din special ban jata hai. 🥺
+        </div>
+    </div>
+
+    <div class="reason-card" onclick="toggleReason(5)">
+        💖 Reason 5 — Simply You
+        <div class="reason-text" id="reason5">
+            Tum special ho kyunki tum bilkul tum ho, aur mujhe tumhari dosti bahut pyari hai. 🫂
+        </div>
+    </div>
+
+</div>
+        <!-- 3D OPEN BUTTON -->
+
+        <button id="open3DButton">
+            💎 Open 3D Surprise 💎
+        </button>
+
+    </section>
+
+    <!-- 3D SECTION - YE 2D KE BAAD HI KHULEGA -->
+
+    <section class="memory3d-section" id="memory3D">
+
+        <h2>💝 A Special 3D Card 💝</h2>
+
+        <p>Button dabao aur card ke andar ka surprise dekho!</p>
+
+        <div class="flip-card">
+
+            <div class="flip-card-inner" id="flipInner">
+
+                <div class="flip-front">
+                    <h2>For Komal ❤️</h2>
+                    <p>
+                        A little card,
+                        <br>
+                        with lots of happiness. 🌸
+                        <br><br>
+                        Flip me! 💗
+                    </p>
+                </div>
+
+                <div class="flip-back">
+                    <h2>Always Smile! 🥰</h2>
+                    <p>
+                        Tumhari dosti mere liye ek
+                        beautiful gift hai.
+                        <br><br>
+                        Stay blessed, Komal! ❤️
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <button id="flipButton">
+            💝 Flip My Card 💝
+        </button>
+
+    </section>
+
+</div>
+
+<div id="emojiRain"></div>
+
+
+<script>
+
+/* ELEMENTS */
+
+const songButton = document.getElementById("openSong");
+const songCard = document.getElementById("songCard");
+const friendshipWrapper = document.getElementById("friendshipWrapper");
+
+const openBtn = document.getElementById("openFriendship");
+const message = document.getElementById("friendshipMessage");
+
+const secretBtn = document.getElementById("secretBtn");
+const secretMessage = document.getElementById("secretMessage");
+
+const open3DButton = document.getElementById("open3DButton");
+const memory3D = document.getElementById("memory3D");
+
+const flipButton = document.getElementById("flipButton");
+const flipInner = document.getElementById("flipInner");
+
+const emojiRain = document.getElementById("emojiRain");
+
+
+/* EMOJI RAIN FUNCTION */
+
+function makeEmojiRain() {
+
+    const emojis = ["💖", "💗", "💕", "🌸", "✨", "🥰", "🦋", "❤️","💘","💞","💓","🌹","🧸",
+"🎁","💟","💕","🌺","💌",
+"🩷","💜","🤗","😘","🌻","❤️","💖","💕","💗","🥰",
+        "🌸","✨","🦋","💝","🌷",
+        "💫","🎀","😍","💐","❤️",
+        "🌸","✨","🦋","💝","🌷",
+        "💫","🎀","😍","💐","❤️","💖","💕","💗","🥰",
+        "🌸","✨","🦋","💝","🌷",
+        "💫","🎀","😍","💐","❤️",
+        "🌸","✨","🦋","💝","🌷",
+        "💫","🎀","😍","💐",];
+
+    for (let i = 0; i < 150; i++) {
+
+        const emoji = document.createElement("div");
+
+        emoji.className = "emoji";
+        emoji.innerText = emojis[
+            Math.floor(Math.random() * emojis.length)
+        ];
+
+        emoji.style.left = Math.random() * 100 + "vw";
+        emoji.style.animationDuration = (2 + Math.random() * 3) + "s";
+        emoji.style.fontSize = (18 + Math.random() * 20) + "px";
+
+        emojiRain.appendChild(emoji);
+
+        setTimeout(() => {
+            emoji.remove();
+        }, 10000);
+    }
+}
+
+
+/* FIRST BUTTON - VIDEO SECTION OPEN */
+
+songButton.addEventListener("click", function() {
+
+    songCard.classList.add("show");
+    friendshipWrapper.classList.add("show");
+
+    songButton.textContent = "💖 Your Surprise Is Opened!";
+    songButton.disabled = true;
+
+    makeEmojiRain();
+
+    songCard.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+});
+
+
+/* VIDEO SAVE SYSTEM */
+
+const videoInput = document.getElementById("myVideo");
+const videoPlayer = document.getElementById("videoPlayer");
+const statusText = document.getElementById("status");
+
+let currentVideoURL = null;
+
+let videoDB;
+
+const request = indexedDB.open("KomalVideoDB", 1);
+
+request.onupgradeneeded = function(event) {
+
+    videoDB = event.target.result;
+
+    if (!videoDB.objectStoreNames.contains("videos")) {
+        videoDB.createObjectStore("videos");
+    }
+};
+
+request.onsuccess = function(event) {
+
+    videoDB = event.target.result;
+
+    const transaction = videoDB.transaction("videos", "readonly");
+    const store = transaction.objectStore("videos");
+    const getRequest = store.get("mySong");
+
+    getRequest.onsuccess = function() {
+
+        if (getRequest.result) {
+            showVideo(getRequest.result);
+            
+        }
+    };
+};
+
+request.onerror = function() {
+    statusText.textContent = "Video storage open nahi ho paya.";
+};
+
+
+function showVideo(file) {
+
+    if (currentVideoURL) {
+        URL.revokeObjectURL(currentVideoURL);
+    }
+
+    currentVideoURL = URL.createObjectURL(file);
+    videoPlayer.src = currentVideoURL;
+  videoInput.style.display = "none";
+  }
+
+
+
+videoInput.addEventListener("change", function() {
+
+    const file = videoInput.files[0];
+
+    if (!file) return;
+
+    if (!file.type.startsWith("video/")) {
+        statusText.textContent = "Please video file select karo.";
+        return;
+    }
+
+    showVideo(file);
+
+    if (!videoDB) {
+        statusText.textContent = "Video database ready nahi hai. Dobara try karo.";
+        return;
+    }
+
+    const transaction = videoDB.transaction("videos", "readwrite");
+    const store = transaction.objectStore("videos");
+
+    store.put(file, "mySong");
+
+    transaction.oncomplete = function() {
+        statusText.textContent = "Video save ho gaya! ❤️";
+    };
+
+    transaction.onerror = function() {
+        statusText.textContent = "Video save nahi ho paya.";
+    };
+
+});
+
+
+/* SECOND BUTTON - ONLY 2D SECTION OPEN */
+
+openBtn.addEventListener("click", function() {
+
+    message.classList.add("show");
+if (bgMusic.src) {
+    bgMusic.play();
+  }
+    openBtn.textContent = "💖 Your Message Is Open!";
+    openBtn.disabled = true;
+
+    makeEmojiRain();
+
+    message.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+});
+/* MUSIC SAVE SYSTEM */
+
+const musicInput = document.getElementById("musicInput");
+const bgMusic = document.getElementById("bgMusic");
+const musicStatus = document.getElementById("musicStatus");
+
+let currentMusicURL = null;
+
+function showSavedMusic(file) {
+    if (currentMusicURL) {
+        URL.revokeObjectURL(currentMusicURL);
+    }
+
+    currentMusicURL = URL.createObjectURL(file);
+    bgMusic.src = currentMusicURL;
+
+    musicInput.style.display = "none";
+  
+}
+
+/* LOAD SAVED MUSIC */
+
+request.onsuccess = function(event) {
+    videoDB = event.target.result;
+
+    const transaction = videoDB.transaction("videos", "readonly");
+    const store = transaction.objectStore("videos");
+
+    store.get("mySong").onsuccess = function(e) {
+        if (e.target.result) {
+            showVideo(e.target.result);
+        }
+    };
+
+    store.get("myMusic").onsuccess = function(e) {
+        if (e.target.result) {
+            showSavedMusic(e.target.result);
+        }
+    };
+};
+
+/* SELECT AND SAVE MUSIC */
+
+musicInput.addEventListener("change", function() {
+    const file = musicInput.files[0];
+
+    if (!file) return;
+
+    if (!file.type.startsWith("audio/")) {
+        musicStatus.textContent = "Audio file select karo.";
+        return;
+    }
+
+    if (!videoDB) {
+        musicStatus.textContent = "Database loading hai. Thodi der baad try karo.";
+        return;
+    }
+
+    musicStatus.textContent = "Music save ho raha hai...";
+
+    const tx = videoDB.transaction("videos", "readwrite");
+
+    tx.objectStore("videos").put(file, "myMusic");
+
+    tx.oncomplete = function() {
+        showSavedMusic(file);
+    };
+
+    tx.onerror = function() {
+        musicStatus.textContent = "Music save nahi hua.";
+    };
+});
+
+
+
+
+
+
+
+/* SECRET MESSAGE BUTTON */
+
+secretBtn.addEventListener("click", function() {
+
+    secretMessage.classList.add("show");
+
+    secretBtn.textContent = "💗 A Secret For You!";
+    secretBtn.disabled = true;
+
+    makeEmojiRain();
+
+    secretMessage.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+});
+
+
+/* 3D BUTTON - ONLY 3D SECTION OPEN */
+
+open3DButton.addEventListener("click", function() {
+
+    memory3D.classList.add("show");
+
+    open3DButton.textContent = "💖 3D Surprise Opened!";
+    open3DButton.disabled = true;
+
+    makeEmojiRain();
+
+    memory3D.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+});
+
+
+/* FLIP 3D CARD */
+
+flipButton.addEventListener("click", function() {
+
+    flipInner.classList.toggle("flipped");
+
+    if (flipInner.classList.contains("flipped")) {
+        flipButton.textContent = "💝 Flip Back 💝";
+    } else {
+        flipButton.textContent = "💝 Flip My Card 💝";
+    }
+
+    makeEmojiRain();
+
+});
+function showPromise() {
+
+    const promise = document.getElementById("promiseMessage");
+
+    promise.classList.add("show");
+
+    promise.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+  }
+  function openLetter() {
+
+    const envelope = document.getElementById("myEnvelope");
+    const letter = document.getElementById("myLetter");
+
+    envelope.classList.add("open");
+    letter.classList.add("show");
+
+    letter.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+          }
+function openGoldenMemory() {
+
+    const message = document.getElementById("goldenMessage");
+
+    message.classList.add("show");
+
+    // Golden particles
+    const section = document.querySelector(".golden-section");
+
+    for (let i = 0; i < 35; i++) {
+
+        const particle = document.createElement("span");
+
+        particle.className = "golden-particle";
+        particle.innerHTML = "✨";
+
+        particle.style.left = Math.random() * 100 + "%";
+        particle.style.animationDelay = Math.random() * 2 + "s";
+
+        section.appendChild(particle);
+
+        setTimeout(function() {
+            particle.remove();
+        }, 5000);
+    }
+
+    message.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+}
+  function toggleReason(number) {
+
+    const reason = document.getElementById("reason" + number);
+
+    reason.classList.toggle("show");
+
+  }
+  /* NEON RIPPLE BUTTON EFFECT */
+
+document.addEventListener("click", function(event) {
+
+    const button = event.target.closest("button");
+
+    if (!button) return;
+
+    const ripple = document.createElement("span");
+
+    ripple.className = "ripple";
+
+    const rect = button.getBoundingClientRect();
+
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    ripple.style.left = x + "px";
+    ripple.style.top = y + "px";
+
+    button.appendChild(ripple);
+
+    setTimeout(function() {
+        ripple.remove();
+    }, 800);
+
+});
+  /* AUTOMATIC FLOATING HEARTS AND BUBBLES */
+
+const effectsLayer = document.createElement("div");
+effectsLayer.className = "floating-effects-layer";
+document.body.appendChild(effectsLayer);
+
+const heartColors = [
+    "#ff69b4",
+    "#ff1744",
+    "#c77dff",
+    "#00cfff",
+    "#ff4fd8",
+    "#ffb347",
+    "#ffffff"
+];
+
+/* CREATE FLOATING HEARTS */
+
+function createFloatingHeart() {
+
+    const heart = document.createElement("span");
+
+    heart.className = "floating-heart";
+    heart.innerHTML = "♥";
+
+    heart.style.left = Math.random() * 100 + "%";
+    heart.style.color =
+        heartColors[Math.floor(Math.random() * heartColors.length)];
+
+    heart.style.fontSize = (20 + Math.random() * 25) + "px";
+    heart.style.animationDuration = (9 + Math.random() * 6) + "s";
+
+    effectsLayer.appendChild(heart);
+
+    setTimeout(function() {
+        heart.remove();
+    }, 16000);
+}
+
+/* CREATE FLOATING GLASS BUBBLES */
+
+function createFloatingBubble() {
+
+    const bubble = document.createElement("span");
+
+    bubble.className = "floating-bubble";
+
+    const size = 15 + Math.random() * 30;
+
+    bubble.style.width = size + "px";
+    bubble.style.height = size + "px";
+    bubble.style.left = Math.random() * 100 + "%";
+    bubble.style.animationDuration = (10 + Math.random() * 6) + "s";
+
+    effectsLayer.appendChild(bubble);
+
+    setTimeout(function() {
+        bubble.remove();
+    }, 17000);
+}
+
+/* AUTOMATIC ANIMATION */
+
+setInterval(createFloatingHeart, 900);
+setInterval(createFloatingBubble, 1200);
+</script>
+
+</body>
+</html>
